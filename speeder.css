@@ -1,0 +1,43 @@
+body {
+  margin: 0;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.container {
+  width: 200px;
+  min-height: 200px;
+  background-color: #394447;
+  margin: auto;
+  text-align: center;
+  padding-top: 20px;
+}
+
+.readySpeed {
+  width: 50px;
+  margin-bottom: 20px;
+}
+
+button:hover {
+  background-color: #394447;
+  color: white;
+}
+
+.speedInput {
+  width: 100px;
+}
+
+p {
+  color: white;
+  margin: 0;
+}
