@@ -2,10 +2,21 @@ function onLoad() {
   const buttonsContainer = document.querySelector('.readyButtonsContainer');
   const accept = document.querySelector('.acceptSpeed')
   const speedInput = document.querySelector('.speedInput')
+  const speedInputValue = document.querySelector('.actualSpeed')
+  speedInputValue.textContent = speedInput.value;
 
-  buttonsContainer.addEventListener('click', onclick, false)
-  accept.addEventListener('click', onAccept, false)
-  speedInput.addEventListener('keydown', () => onAccept())
+
+  buttonsContainer.addEventListener('click', onclick)
+  accept.addEventListener('click', onAccept)
+  speedInput.addEventListener('keydown', ()=>{
+    if (e.keyCode == 13){
+      onAcept()
+    }
+  })
+
+  speedInput.oninput = function() {
+    speedInputValue.innerHTML = this.value;
+  }
 
   function onclick(e) {
     try {

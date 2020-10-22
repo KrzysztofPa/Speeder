@@ -14,6 +14,15 @@ input[type=number] {
   -moz-appearance: textfield;
 }
 
+input, button{
+  border-radius: 1em;
+  background-color: #394447;
+  color: white;
+}
+
+button:hover {
+  box-shadow: .1em .1em .2em black;
+}
 .container {
   width: 200px;
   min-height: 200px;
@@ -27,14 +36,13 @@ input[type=number] {
   width: 50px;
   margin-bottom: 20px;
 }
-
-button:hover {
-  background-color: #394447;
-  color: white;
+.acceptSpeed{
+  margin-bottom:.5em;
 }
 
 .speedInput {
-  width: 100px;
+  width: 80%;
+  margin:.2em;
 }
 
 p {
