@@ -8,20 +8,19 @@ function onLoad() {
 
   buttonsContainer.addEventListener('click', onclick)
   accept.addEventListener('click', onAccept)
-  speedInput.addEventListener('keydown', ()=>{
-    if (e.keyCode == 13){
-      onAcept()
+  speedInput.addEventListener('keydown', () => {
+    if (e.keyCode === 13) { //13 = enter
+      onAccept()
     }
   })
 
-  speedInput.oninput = function() {
+  speedInput.oninput = function () {
     speedInputValue.innerHTML = this.value;
   }
 
   function onclick(e) {
     try {
-      let button = e.target.closest('button');
-      let send = button.textContent;
+      let send = e.target.closest('button').textContent;
 
       chrome.tabs.query({
         currentWindow: true,
@@ -32,19 +31,17 @@ function onLoad() {
     } catch (error) {}
   }
 
-
   function onAccept() {
-    let send = speedInput.value
+    let send = speedInput.value;
     chrome.tabs.query({
       currentWindow: true,
       active: true
     }, function (tabs) {
       chrome.tabs.sendMessage(tabs[0].id, send)
-    })  
+    })
   }
 }
 
-
 window.addEventListener('DOMContentLoaded', () => {
-  onLoad()
+  onLoad();
 });
